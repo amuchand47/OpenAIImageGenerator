@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/main.js" defer></script>
+    <title>OpenAI Image Genrator</title>
+
+    <style>
+      body {
+        background-image: url("./cool-background.png");
+      }
+
+      .showcase {
+        width: 750px;
+        height: 350px;
+        background: rgb(188, 180, 180);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+      }
+
+      input[type="text"] {
+        width: 400px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: rgb(139, 231, 34);
+        background-image: url("searchicon.png");
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+      }
+
+      #image-form {
+        padding-top: 80px;
+      }
+
+      .btn {
+        background-color: #4caf50; /* Green */
+        border-radius: 5px;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid #4caf50;
+      }
+
+      .main-class {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      select {
+        margin-top: 2% !important;
+        font-size: 12px !important;
+        text-align: center !important;
+        width: 25% !important;
+        padding: 3px 6px !important;
+      }
+      option {
+        min-height: 1rem !important;
+        padding: 7px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main-class">
+      <h1>OpenAI Image Generator</h1>
+      <section class="showcase">
+        <form id="image-form">
+          <div class="form-control">
+            <input type="text" id="prompt" placeholder="Describe An Image" />
+          </div>
+          <!-- size -->
+          <div class="form-control">
+            <select name="size" id="size">
+              <option value="small">Small</option>
+              <option value="medium" selected>Medium</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+          <button type="submit" class="btn">Generate</button>
+        </form>
+      </section>
+
+      <section class="image">
+        <div class="image-container">
+          <h2 class="msg"></h2>
+          <img src="" alt="" id="image" />
+        </div>
+      </section>
+    </main>
+
+    <div class="spinner"></div>
+  </body>
+</html>
